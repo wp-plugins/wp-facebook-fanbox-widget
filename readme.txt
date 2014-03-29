@@ -1,17 +1,33 @@
-=== WP Facebook Fan Box ===
+=== WP Facebook FanBox ===
 Contributors: vivacityinfotech.jaipur
 Tags:  facebook fanbox, facebook page timeline,facebook fanbox widget,facebook fanbox widget for wordpress,wp facebook fanbox widget,fanbox, facebook
 Requires at least: 3.0
 Tested up to: 3.8
 License: GPLv2 or later
 
-WP FaceBook Like Box - A social plugin that allows page owners to promote their Pages and embed a page feed on their websites.
+WP FaceBook FanBox - A social plugin that allows page owners to promote their Pages and embed a page feed on their websites.
 
 
 == Description ==
-WP FaceBook Like Box is a social plugin that allows page owners to promote their Pages and embed a simple feed of content from a Page into other sites.
+WP FaceBook FanBox is a social plugin that allows page owners to promote their Pages and embed a simple feed of content from a Page into other sites.
 
+= Rate Us / Feedback =
 
+Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
+
+= Want More? =
+
+If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
+
+== Features ==
+
+    *Easy install
+    *Very easy to configure.
+    *Displays recent activity from your Facebook Page and encourages new Like actions.
+    *Multiple instance so you can use the  widget in multiple places.
+    *Configurable Facebook color scheme(Light/Dark).
+    *Lightweight and loading fast
+    
 == Installation ==
 
 Installation consists of following steps:
@@ -40,40 +56,25 @@ Installation consists of following steps:
 5. If you have any troubles creating the app or for more in depth information please visit https://developers.facebook.com/docs/opengraph/getting-started/
 
 
-=Can I use the regular Like Button with my Facebook Page=
+= Can I use the regular Like Button with my Facebook Page =
 Yes. This can be useful if you need a more compact layout than the Like Box can provide.
 
-=How can I allow people to like my webpages?=
+= How can I allow people to like my webpages? =
 This Like Box is designed only for use with Facebook Pages. For any other purposes you should use the Like Button
 
-=How do I know when someone clicked on a Like button on my site?=
+= How do I know when someone clicked on a Like button on my site? =
 The XFBML and HTML5 versions of the button allow you to subscribe to the 'edge.create' event in the Facebook SDK for JavaScript through FB.Event.subscribe. This JavaScript event will fire any time a button is clicked.
 
 
-= Rate Us / Feedback =
-
-Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
-
-Want More?
-
-If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
-
-== Features ==
-
-    *Easy install
-    *Very easy to configure.
-    *Displays recent activity from your Facebook Page and encourages new Like actions.
-    *Multiple instance so you can use the  widget in multiple places.
-    *Configurable Facebook color scheme(Light/Dark).
-    *Lightweight and loading fast
-    
 == Available Languages ==
 
     English
     
 == Screenshots ==
-1. Wordpress Admin Setting for Facebook Like Box 
-2. Wordpress Admin Setting for Integration to display Social Network Buttons (Default is NO)
+1. WP Facebook FanBox plugin installed and appears in the widgets area.
+2. WP Facebook FanBox widget under Appearence->Widgets.
+3. Plugin Settings page to configure various settings.
+4. Widget displayed in the front end.
 
 == Changelog ==
 = 1.0 =
