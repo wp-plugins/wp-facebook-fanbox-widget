@@ -11,6 +11,17 @@ WP FaceBook FanBox - A social plugin that allows page owners to promote their Pa
 == Description ==
 WP FaceBook FanBox is a social plugin that allows page owners to promote their Pages and embed a simple feed of content from a Page into other sites.
 
+It is a special version of the Like Button designed only for Facebook Pages. It allows admins to promote their Pages and embed a simple feed of content from a Page into other sites.
+
+= Features =
+
+    *Easy install
+    *Very easy to configure.
+    *Displays recent activity from your Facebook Page and encourages new Like actions.
+    *Multiple instance so you can use the  widget in multiple places.
+    *Configurable Facebook color scheme(Light/Dark).
+    *Lightweight and loading fast
+
 = Rate Us / Feedback =
 
 Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
@@ -19,15 +30,6 @@ Please take the time to let us and others know about your experiences by leaving
 
 If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
 
-== Features ==
-
-    *Easy install
-    *Very easy to configure.
-    *Displays recent activity from your Facebook Page and encourages new Like actions.
-    *Multiple instance so you can use the  widget in multiple places.
-    *Configurable Facebook color scheme(Light/Dark).
-    *Lightweight and loading fast
-    
 == Installation ==
 
 Installation consists of following steps:
