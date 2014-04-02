@@ -1,8 +1,9 @@
 === WP Facebook FanBox ===
 Contributors: vivacityinfotech.jaipur
-Tags:  facebook fanbox, facebook page timeline,facebook fanbox widget,facebook fanbox widget for wordpress,wp facebook fanbox widget,fanbox, facebook
+Tags:  facebook likebox, facebook page timeline,facebook likebox widget,facebook likebox widget for wordpress,wp facebook likebox widget,likebox, facebook
 Requires at least: 3.0
 Tested up to: 3.8
+Stable Tag: 1.0
 License: GPLv2 or later
 
 WP FaceBook FanBox - A social plugin that allows page owners to promote their Pages and embed a page feed on their websites.
