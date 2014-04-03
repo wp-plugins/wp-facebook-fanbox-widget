@@ -1,7 +1,7 @@
 === WP Facebook FanBox ===
 Contributors: vivacityinfotech.jaipur
 Donate link: http://tinyurl.com/owxtkmt
-Tags:  facebook likebox, facebook page timeline,facebook likebox widget,facebook likebox widget for wordpress,wp facebook likebox widget,likebox, facebook
+Tags:  wp fanbox,fanbox,facebook fanbox,wp facebook fanbox,wp facebook fanbox widget,facebook likebox, facebook page timeline,facebook likebox widget,facebook likebox widget for wordpress,wp facebook likebox widget,likebox, facebook
 Requires at least: 3.0
 Tested up to: 3.8
 Stable Tag: 1.0
