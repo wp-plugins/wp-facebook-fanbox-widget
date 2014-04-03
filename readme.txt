@@ -41,7 +41,7 @@ Installation consists of following steps:
 3. Place the "WP FaceBook Fan Box" Widget on your sidebar and add facebook appID with other details of FaceBook.
 
 
-== Frequently Asked Qustions ==
+== Frequently Asked Questions ==
 = How to Create a Facebook App =
 
 1. Visit the Facebook Developers Site: The first thing you need to do is head on down to https://developers.facebook.com. In order to create an account, all you need to do is click on the “Sign In” link.
