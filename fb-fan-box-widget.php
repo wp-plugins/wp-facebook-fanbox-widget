@@ -102,7 +102,7 @@ add_filter( "plugin_action_links_$plugin", 'fb_fan_settings_link' );
 	register_activation_hook( __FILE__, 'fanbox_init' );
 	function fanbox_init(){
 		$defaults=array('appID'=>'593910274026990',
-				'pageURL'=>'https://www.facebook.com/FacebookDevelopers',
+				'pageURL'=>'https://www.facebook.com/vivacityinfotech',
 				'streams'=>'yes',
 				'colorScheme'=>'light',
 				'borderdisp'=>'yes',
