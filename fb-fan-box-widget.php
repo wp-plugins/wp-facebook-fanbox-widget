@@ -2,10 +2,25 @@
 /*
  * Plugin Name: Facebook Fan Box Widget
  * Version: 1.0
- * Plugin URI: http://www.vivacityinfotech.com/
+ * Plugin URI: http://www.vivacityinfotech.net/
  * Description: A Facebook social plugin that allows page owners to promote their Pages and embed a page feed on their websites through a simple to use widget.
  * Author: vivacityinfotech
- * Author URI: http://www.vivacityinfotech.com/
+ * Author URI: http://www.vivacityinfotech.net/
+ 
+ Copyright 2014  Vivacity InfoTech Pvt. Ltd.  (email : support@vivacityinfotech.com)
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as 
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 require_once('facebook-fanbox-settings.php');
 class FbFanBox_Widget_Class extends WP_Widget
