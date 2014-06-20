@@ -27,7 +27,8 @@ function fb_wp_head() {
 				$options['borderdisp']=$_REQUEST['borderdisp'];
 				$options['colorScheme']=$_REQUEST['colorScheme'];
 				$options['showFaces']	=$_REQUEST['showFaces'];
-				$options['header']=	$_REQUEST['header'];	
+				$options['header']=	$_REQUEST['header'];
+				$options['lang']=	$_REQUEST['lang'];
 				fb_like_bx_update_options($options);
 				$fb_like_bx_settings=get_option('fb_like_bx_options');
 		}
@@ -124,6 +125,136 @@ function fb_wp_head() {
 							<div class="cmb_radio_inline_option"><input type="radio" name="header" id="header2" value="no" <?php if(isset($fb_like_bx_settings['header']) && $fb_like_bx_settings['header']=="no"){echo 'checked';}?>><label for="header2">No</label></div>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								<img border="0"  value="Tip" class="tip" title="Specifies whether to display the Facebook header at the top of the plugin." src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="Show the 'Find Us on Facebook' header on the plugin">
+							</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<th>
+								Select Your Language:
+							</th>
+							<td>
+							<div class="cmb_radio_inline"><div class="cmb_radio_inline_option">
+							
+							<?php $lang=array();
+								$lang['af_ZA']='Afrikaans';
+								$lang['sq_AL']='Albanian';
+								$lang['ar_AR']='Arabic';
+								$lang['hy_AM']='Armenian';
+								$lang['ay_BO']='Aymara';
+								$lang['az_AZ']='Azeri';
+								$lang['eu_ES']='Basque';
+								$lang['be_BY']='Belarusian';
+								$lang['bn_IN']='Bengali';
+								$lang['bs_BA']='Bosnian';
+								$lang['bg_BG']='Bulgarian';
+								$lang['ca_ES']='Catalan';
+								$lang['ck_US']='Cherokee';
+								$lang['hr_HR']='Croatian';
+								$lang['cs_CZ']='Czech';
+								$lang['da_DK']='Danish';
+								$lang['nl_NL']='Dutch';
+								$lang['nl_BE']='Dutch (Belgi?)';
+								$lang['en_GB']='English (UK)';
+								$lang['en_PI']='English (Pirate)';
+								$lang['en_UD']='English (Upside Down)';
+								$lang['en_US']='English (US)';
+								$lang['eo_EO']='Esperanto';
+								$lang['et_EE']='Estonian';
+								$lang['fo_FO']='Faroese';
+								$lang['tl_PH']='Filipino';
+								$lang['fi_FI']='Finnish';
+								$lang['fb_FI']='Finnish (test)';
+								$lang['fr_CA']='French (Canada)';
+								$lang['fr_FR']='French (France)';
+								$lang['gl_ES']='Galician';
+								$lang['ka_GE']='Georgian';
+								$lang['de_DE']='German';
+								$lang['el_GR']='Greek';
+								$lang['gn_PY']='Guaran?';
+								$lang['gu_IN']='Gujarati';
+								$lang['he_IL']='Hebrew';
+								$lang['hi_IN']='Hindi';
+								$lang['hu_HU']='Hungarian';
+								$lang['is_IS']='Icelandic';
+								$lang['id_ID']='Indonesian';
+								$lang['ga_IE']='Irish';
+								$lang['it_IT']='Italian';
+								$lang['ja_JP']='Japanese';
+								$lang['jv_ID']='Javanese';
+								$lang['kn_IN']='Kannada';
+								$lang['kk_KZ']='Kazakh';
+								$lang['km_KH']='Khmer';
+								$lang['tl_ST']='Klingon';
+								$lang['ko_KR']='Korean';
+								$lang['ku_TR']='Kurdish';
+								$lang['la_VA']='Latin';
+								$lang['lv_LV']='Latvian';
+								$lang['fb_LT']='Leet Speak';
+								$lang['li_NL']='Limburgish';
+								$lang['lt_LT']='Lithuanian';
+								$lang['mk_MK']='Macedonian';
+								$lang['mg_MG']='Malagasy';
+								$lang['ms_MY']='Malay';
+								$lang['ml_IN']='Malayalam';
+								$lang['mt_MT']='Maltese';
+								$lang['mr_IN']='Marathi';
+								$lang['mn_MN']='Mongolian';
+								$lang['ne_NP']='Nepali';
+								$lang['se_NO']='Northern S?mi';
+								$lang['nb_NO']='Norwegian (bokmal)';
+								$lang['nn_NO']='Norwegian (nynorsk)';
+								$lang['ps_AF']='Pashto';
+								$lang['fa_IR']='Persian';
+								$lang['pl_PL']='Polish';
+								$lang['pt_BR']='Portuguese (Brazil)';
+								$lang['pt_PT']='Portuguese (Portugal)';
+								$lang['pa_IN']='Punjabi';
+								$lang['qu_PE']='Quechua';
+								$lang['ro_RO']='Romanian';
+								$lang['rm_CH']='Romansh';
+								$lang['ru_RU']='Russian';
+								$lang['sa_IN']='Sanskrit';
+								$lang['sr_RS']='Serbian';
+								$lang['zh_CN']='Simplified Chinese (China)';
+								$lang['sk_SK']='Slovak';
+								$lang['sl_SI']='Slovenian';
+								$lang['so_SO']='Somali';
+								$lang['es_LA']='Spanish';
+								$lang['es_CL']='Spanish (Chile)';
+								$lang['es_CO']='Spanish (Colombia)';
+								$lang['es_MX']='Spanish (Mexico)';
+								$lang['es_ES']='Spanish (Spain)';
+								$lang['sv_SE']='Swedish';
+								$lang['sy_SY']='Syriac';
+								$lang['tg_TJ']='Tajik';
+								$lang['ta_IN']='Tamil';
+								$lang['tt_RU']='Tatar';
+								$lang['te_IN']='Telugu';
+								$lang['th_TH']='Thai';
+								$lang['zh_HK']='Traditional Chinese (Hong Kong)';
+								$lang['zh_TW']='Traditional Chinese (Taiwan)';
+								$lang['tr_TR']='Turkish';
+								$lang['uk_UA']='Ukrainian';
+								$lang['ur_PK']='Urdu';
+								$lang['uz_UZ']='Uzbek';
+								$lang['vi_VN']='Vietnamese';
+								$lang['cy_GB']='Welsh';
+								$lang['xh_ZA']='Xhosa';
+								$lang['yi_DE']='Yiddish';
+								$lang['zu_ZA']='Zulu';
+							?>
+							<select name="lang">
+							<?php foreach($lang as $key=>$val)
+							{
+								$selected='';
+								if($fb_like_bx_settings['lang']==$key)
+									$selected="selected";
+									echo '<option value="'.$key.'" '.$selected.' >'.$val.'</option>';
+								
+							}
+								?>
+							</select><img border="0"  value="Tip" class="tip" title="Select the language for Facebook Fanbox" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="Show the 'Find Us on Facebook' header on the plugin">
 							</div>
 							</td>
 						</tr>

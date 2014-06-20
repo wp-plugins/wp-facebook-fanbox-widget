@@ -3,8 +3,8 @@ Contributors: vivacityinfotech.jaipur
 Donate link: http://tinyurl.com/owxtkmt
 Tags:  wp fanbox,fanbox,facebook fanbox,wp facebook fanbox,wp facebook fanbox widget,facebook likebox, facebook page timeline,facebook likebox widget,facebook likebox widget for wordpress,wp facebook likebox widget,likebox, facebook
 Requires at least: 3.0
-Tested up to: 3.8
-Stable Tag: 1.0
+Tested up to: 3.9.1
+Stable Tag: 1.1
 License: GPLv2 or later
 
 WP FaceBook FanBox - A social plugin that allows page owners to promote their Pages and embed a page feed on their websites.
@@ -72,7 +72,114 @@ The XFBML and HTML5 versions of the button allow you to subscribe to the 'edge.c
 
 == Available Languages ==
 
-    English
+Afrikaans	     	af_ZA
+Albanian	     	sq_AL
+Arabic	             	ar_AR
+Armenian	     	hy_AM
+Aymara	             	ay_BO
+Azeri	             	az_AZ
+Basque	             	eu_ES
+Belarusian	     	be_BY
+Bengali	             	bn_IN
+Bosnian	             	bs_BA
+Bulgarian	     	bg_BG
+Catalan	             	ca_ES
+Cherokee	     	ck_US
+Croatian	        hr_HR
+Czech	                cs_CZ
+Danish	                da_DK
+Dutch	                nl_NL
+Dutch (Belgi?)	        nl_BE
+English (Pirate)        en_PI
+English (UK)	        en_GB
+English (Upside Down)	en_UD
+English (US)		en_US
+Esperanto		eo_EO
+Estonian		et_EE
+Faroese			fo_FO
+Filipino		tl_PH
+Finnish			fi_FI
+Finnish (test)		fb_FI
+French (Canada)		fr_CA
+French (France)		fr_FR
+Galician		gl_ES
+Georgian		ka_GE
+German			de_DE
+Greek			el_GR
+Guaran?			gn_PY
+Gujarati		gu_IN
+Hebrew			he_IL
+Hindi			hi_IN
+Hungarian		hu_HU
+Icelandic		is_IS
+Indonesian		id_ID
+Irish			ga_IE
+Italian			it_IT
+Japanese		ja_JP
+Javanese		jv_ID
+Kannada			kn_IN
+Kazakh			kk_KZ
+Khmer			km_KH
+Klingon			tl_ST
+Korean			ko_KR
+Kurdish			ku_TR
+Latin			la_VA
+Latvian			lv_LV
+Leet Speak		fb_LT
+Limburgish		li_NL
+Lithuanian		lt_LT
+Macedonian		mk_MK
+Malagasy		mg_MG
+Malay			ms_MY
+Malayalam		ml_IN
+Maltese			mt_MT
+Marathi			mr_IN
+Mongolian		mn_MN
+Nepali			ne_NP
+Northern S?mi		se_NO
+Norwegian (bokmal)	nb_NO
+Norwegian (nynorsk)	nn_NO
+Pashto			ps_AF
+Persian			fa_IR
+Polish			pl_PL
+Portuguese (Brazil)	pt_BR
+Portuguese (Portugal)	pt_PT
+Punjabi			pa_IN
+Quechua			qu_PE
+Romanian		ro_RO
+Romansh			rm_CH
+Russian			ru_RU
+Sanskrit		sa_IN
+Serbian			sr_RS
+Simplified Chinese 	zh_CN
+Slovak			sk_SK
+Slovenian		sl_SI
+Somali			so_SO
+Spanish			es_LA
+Spanish (Chile)		es_CL
+Spanish (Colombia)	es_CO
+Spanish (Mexico)	es_MX
+Spanish (Spain)		es_ES
+Spanish (Venezuela)	es_VE
+Swahili			sw_KE
+Swedish			sv_SE
+Syriac			sy_SY
+Tajik			tg_TJ
+Tamil			ta_IN
+Tatar			tt_RU
+Telugu			te_IN
+Thai			th_TH
+Traditional Chinese (Hong Kong)	zh_HK
+Traditional Chinese (Taiwan)	zh_TW
+Turkish			tr_TR
+Ukrainian		uk_UA
+Urdu			ur_PK
+Uzbek			uz_UZ
+Vietnamese		vi_VN
+Welsh			cy_GB
+Xhosa			xh_ZA
+Yiddish			yi_DE
+Zulu			zu_ZA
     
 == Screenshots ==
 1. WP Facebook FanBox plugin installed and appears in the widgets area.
@@ -81,5 +188,8 @@ The XFBML and HTML5 versions of the button allow you to subscribe to the 'edge.c
 4. Widget displayed in the front end.
 
 == Changelog ==
+= 1.1 =
+* Added the feature to select from a bunch of different languages
+
 = 1.0 =
 * Initial release
