@@ -72,17 +72,17 @@ The XFBML and HTML5 versions of the button allow you to subscribe to the 'edge.c
 
 == Available Languages ==
 
-Afrikaans	     	af_ZA
-Albanian	     	sq_AL
-Arabic	             	ar_AR
-Armenian	     	hy_AM
-Aymara	             	ay_BO
-Azeri	             	az_AZ
-Basque	             	eu_ES
-Belarusian	     	be_BY
-Bengali	             	bn_IN
-Bosnian	             	bs_BA
-Bulgarian	     	bg_BG
+Afrikaans	     	af_ZA <br/>
+Albanian	     	sq_AL <br/>
+Arabic	             	ar_AR <br/>
+Armenian	     	hy_AM <br/>
+Aymara	             	ay_BO <br/>
+Azeri	             	az_AZ <br/>
+Basque	             	eu_ES <br/>
+Belarusian	     	be_BY <br/>
+Bengali	             	bn_IN <br/>
+Bosnian	             	bs_BA <br/>
+Bulgarian	     	bg_BG <br/>
 Catalan	             	ca_ES
 Cherokee	     	ck_US
 Croatian	        hr_HR
