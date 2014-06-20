@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Facebook Fan Box Widget
- * Version: 1.0
+ * Version: 1.1
  * Plugin URI: http://www.vivacityinfotech.net/
  * Description: A Facebook social plugin that allows page owners to promote their Pages and embed a page feed on their websites through a simple to use widget.
  * Author: vivacityinfotech
@@ -44,6 +44,8 @@ class FbFanBox_Widget_Class extends WP_Widget
 	function widget($args, $instance){
 		extract($args);
 		$data=get_option('fb_like_bx_options');
+
+		$fb_lang=(empty($data['lang']) ? 'en_US' : $data['lang']);
 		$widget_title=(empty($instance['title']) ? '' : $instance['title']);
 		$widget_title = apply_filters('widget_title', $widget_title);		
 		$fb_page_link = empty($data['pageURL']) ? '' : $data['pageURL'];
@@ -83,7 +85,7 @@ class FbFanBox_Widget_Class extends WP_Widget
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
 		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_IN/all.js#xfbml=1&appId='.$fb_pageID.'";fjs.parentNode.insertBefore(js, fjs);}(document, \'script\', \'facebook-jssdk\'));</script>';
+		js.src = "//connect.facebook.net/'.$fb_lang.'/all.js#xfbml=1&appId='.$fb_pageID.'";fjs.parentNode.insertBefore(js, fjs);}(document, \'script\', \'facebook-jssdk\'));</script>';
 		$like_box_xfbml = "<fb:like-box href=\"$fb_page_link\" width=\"$width\" show_faces=\"$showFaces\" border_color=\"$borderdisp\" stream=\"$streams\" header=\"$header\" data-colorscheme=\"$fb_colorScheme\" data-show-border=\"$borderdisp\"></fb:like-box>";
 		$renderedHTML = $like_box_xfbml;
 		echo $renderedHTML;
@@ -117,12 +119,13 @@ add_filter( "plugin_action_links_$plugin", 'fb_fan_settings_link' );
 	register_activation_hook( __FILE__, 'fanbox_init' );
 	function fanbox_init(){
 		$defaults=array('appID'=>'593910274026990',
-				'pageURL'=>'https://www.facebook.com/FacebookDevelopers',
+				'pageURL'=>'https://www.facebook.com/vivacityinfotech',
 				'streams'=>'yes',
 				'colorScheme'=>'light',
 				'borderdisp'=>'yes',
 				'showFaces'=>'yes',
-				'header'=>'yes');
+				'header'=>'yes',
+				'lang'=>'en_US');
 		add_option('fb_like_bx_options',$defaults);
 	}
 ?>
