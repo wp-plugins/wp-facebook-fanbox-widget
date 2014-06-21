@@ -1,28 +1,32 @@
 === WP Facebook FanBox ===
 Contributors: vivacityinfotech.jaipur
-Donate link: http://tinyurl.com/owxtkmt
+Donate link: http://bit.ly/1icl56K
 Tags:  wp fanbox,fanbox,facebook fanbox,wp facebook fanbox,wp facebook fanbox widget,facebook likebox, facebook page timeline,facebook likebox widget,facebook likebox widget for wordpress,wp facebook likebox widget,likebox, facebook
 Requires at least: 3.0
 Tested up to: 3.9.1
 Stable Tag: 1.1
 License: GPLv2 or later
 
-WP FaceBook FanBox - A social plugin that allows page owners to promote their Pages and embed a page feed on their websites.
+WP FaceBook FanBox - A social plugin that allows users to promote their Pages and embed a page feed on the websites in their own Locale(Language). 
 
 
 == Description ==
 WP FaceBook FanBox is a social plugin that allows page owners to promote their Pages and embed a simple feed of content from a Page into other sites.
 
+Now users can select the Locale (Language) in which they want the Facebook Fanbox to be displayed (Default is 'en_US').
+
 It is a special version of the Like Button designed only for Facebook Pages. It allows admins to promote their Pages and embed a simple feed of content from a Page into other sites.
 
 = Features =
 
-    *Easy install
+    *Easy to install.
     *Very easy to configure.
     *Displays recent activity from your Facebook Page and encourages new Like actions.
     *Multiple instance so you can use the  widget in multiple places.
     *Configurable Facebook color scheme(Light/Dark).
-    *Lightweight and loading fast
+    *Lightweight and loads fast.
+    *Feature to display Fanbox in a bunch of different languages.
+
 
 = Rate Us / Feedback =
 
