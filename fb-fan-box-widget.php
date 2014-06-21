@@ -128,4 +128,12 @@ add_filter( "plugin_action_links_$plugin", 'fb_fan_settings_link' );
 				'lang'=>'en_US');
 		add_option('fb_like_bx_options',$defaults);
 	}
+add_filter('plugin_row_meta', 'add_meta_links_wpfb',10, 2);
+	function add_meta_links_wpfb($links, $file) {
+		if ( strpos( $file, 'fb-fan-box-widget.php' ) !== false ) {
+			$links[] = '<a href="http://wordpress.org/support/plugin/wp-facebook-fanbox-widget">Support</a>';
+			$links[] = '<a href="http://bit.ly/1icl56K">Donate</a>';
+		}
+		return $links;
+	}
 ?>
