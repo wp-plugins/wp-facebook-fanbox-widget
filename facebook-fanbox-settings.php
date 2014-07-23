@@ -19,6 +19,7 @@ function fb_wp_head() {
 		$fb_like_bx_settings=get_option('fb_like_bx_options');
 		$copy = false;
 		$message = $error = "";
+		$shortcode='';
 		$plugin_info = get_plugin_data( __FILE__ );
 		if ( isset( $_REQUEST['fb_form_submit'] ) && check_admin_referer( plugin_basename( __FILE__ ), 'fb_nonce' ) ) {		
 				$options['appID']=$_REQUEST['appID'];
@@ -70,7 +71,7 @@ function fb_wp_head() {
 							<input type="radio" name="streams" id="streams1" value="yes" <?php if(isset($fb_like_bx_settings['streams']) && $fb_like_bx_settings['streams']=="yes"){echo 'checked="checked"';}?>><label for="streams1">Yes</label></div>
 							<div class="cmb_radio_inline_option"><input type="radio" name="streams" id="streams2" value="no" <?php if(isset($fb_like_bx_settings['streams']) && $fb_like_bx_settings['streams']=="no"){echo 'checked';}?>><label for="streams2">No</label></div>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<img border="0"  class="tip" value="Tip" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="Specifies whether to display a stream of the latest posts by the Page.">
+								<img border="0"  class="tip" value="Tipisset( $_REQUEST['fb_form_submit'] )" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="Specifies whether to display a stream of the latest posts by the Page.">
 							</div>
 							</td>
 						</tr>
@@ -282,6 +283,58 @@ If You Want more functionality or some modifications, just drop us a line what y
 			</div>
 			</div>
 		</div>
+		<div class="clear"></div>
+		<div class="postbox">
+			<h3 class="hndle" style="padding:10px;"><span>ShortCode</span></h3>
+			<div class="inside">
+			You can use this shortcode in your code, where you want to display this Facebook Fanbox.
+<br/>	
+<br>	
+<?php
+$shortcode='';
+if (isset( $_REQUEST['fb_form_submit'] )) {
+$data=get_option('fb_like_bx_options');
+
+		$fb_lang=(empty($data['lang']) ? 'en_US' : $data['lang']);	
+		$fb_page_link = empty($data['pageURL']) ? '' : $data['pageURL'];
+		$fb_pageID = empty($data['appID']) ? '' : $data['appID'];
+		$width = empty($instance['width']) ? '250' : $instance['width'];
+		$height = empty($instance['height']) ? '260' : $instance['height'];
+		$streams = empty($data['streams']) ? 'yes' : $data['streams'];
+		$fb_colorScheme = empty($data['colorScheme']) ? 'light' : $data['colorScheme'];
+		$borderdisp = empty($data['borderdisp']) ? 'yes' : $data['borderdisp'];
+		$showFaces = empty($data['showFaces']) ? 'yes' : $data['showFaces'];
+		$header = empty($data['header']) ? 'yes' : $data['header'];			
+		if ($showFaces == "yes")
+			$showFaces = "true";			
+		else
+			$showFaces = "false";
+		
+		if ($streams == "yes") {
+			$streams = "true";
+			$height = $height + 300;
+		} else
+			$streams = "false";
+		
+		if ($header == "yes") {
+			$header = "true";
+			$height = $height + 32;
+		} else
+			$header = "false";
+		
+		if ($borderdisp == "yes") {
+			$borderdisp = "true";
+		} else
+			$borderdisp = "false";
+			
+$shortcode='[facebook_fanbox  href="'.$fb_page_link.'"  appid="'.$fb_pageID.'"  language="'.$fb_lang.'"  width="'.$width.'"  height="'.$height.'"  colorscheme="'.$fb_colorScheme.'"  showfaces="'.$showFaces.'"  header="'.$header.'"  stream="'.$streams.'"  showborder="'.$borderdisp.'" ]';
+}
+echo $shortcode;
+?>
+<br><br>
+You can edit these parameter according self in shortcode and use.
+			</div>
+			</div>
 	<?php }
 	function fb_like_bx_update_options($data) {
 		update_option( 'fb_like_bx_options', $data );
@@ -290,6 +343,37 @@ If You Want more functionality or some modifications, just drop us a line what y
 		add_menu_page( 'VIVA Plugins', 'VIVA Plugins', 'manage_options', 'viva_plugins', 'fb_like_bx_settings_page', '', 1001 );
 		add_submenu_page( 'viva_plugins','Facebook FanBox Settings','Facebook FanBox', 'manage_options', "fb_box_settings", 'fb_like_bx_settings_page' );
 	}
+	
+	
+// The shortcode callback
+function facebook_generate_code( $atts ) {
+      $content='';
+     extract( shortcode_atts( array(
+ 	      'href' => '',
+ 	      'appid' => '',
+ 	      'language' => 'en_US',
+ 	      'width' => '250',
+ 	      'height' => '260',
+ 	      'colorscheme' => 'dark',
+ 	      'showfaces' => 'true',
+ 	      'header' => 'true',
+ 	      'stream' => 'false',
+ 	      'showborder' => 'true'
+      ), $atts) );
+      
+      	
+		echo '<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/'.$language.'/all.js#xfbml=1&appId='.$appid.'";fjs.parentNode.insertBefore(js, fjs);}(document, \'script\', \'facebook-jssdk\'));</script>';
+		$content = "<fb:like-box href=\"$href\" width=\"$width\" height=\"$height\" show_faces=\"$showfaces\" border_color=\"$showborder\" stream=\"$stream\" header=\"$header\" data-colorscheme=\"$colorscheme\" data-show-border=\"$showborder\"></fb:like-box>";
+	
+	
+    return $content;
+}
+add_shortcode( 'facebook_fanbox', 'facebook_generate_code' );
 	
 add_action( 'admin_menu', 'fb_admin_init_menu' );
 add_action( 'wp_enqueue_scripts', 'fb_wp_head' );

@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Facebook Fan Box Widget
- * Version: 1.1
+ * Version: 1.2
  * Plugin URI: http://www.vivacityinfotech.net/
  * Description: A Facebook social plugin that allows page owners to promote their Pages and embed a page feed on their websites through a simple to use widget.
  * Author: vivacityinfotech
@@ -27,16 +27,23 @@ class FbFanBox_Widget_Class extends WP_Widget
 {
 	
 	function form($instance){
-		$instance = wp_parse_args( (array) $instance, array('title'=>'',
+		$instance = wp_parse_args( (array) $instance, array(
+				'title'=>'',
+				'appID'=>'',
+				'pageurl'=>'',
 				'height'=>'292',
 				'width'=>'250',
 		) );
 	
 		$widget_title = htmlspecialchars($instance['title']);
+		$appID = empty($instance['appID']) ? '' : $instance['appID'];
+		$pageurl = empty($instance['pageurl']) ? '' : $instance['pageurl'];
 		$width = empty($instance['width']) ? '250' : $instance['width'];
 		$height = empty($instance['height']) ? '260' : $instance['height'];
 		echo '<p ><label for="' . $this->get_field_name('title') . '">Title:</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $widget_title . '" /></p>';
 		echo '<hr/><p style="text-align:left;"><b>Like Box Setting</b></p>';
+		echo '<p ><label for="' . $this->get_field_name('appID') . '">Facebook App ID:</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('appID') . '" name="' . $this->get_field_name('appID') . '" type="text" value="' . $appID . '" /></p>';
+		echo '<p ><label for="' . $this->get_field_name('pageurl') . '">Facebook Page Url:</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('pageurl') . '" name="' . $this->get_field_name('pageurl') . '" type="text" value="' . $pageurl . '" /></p>';
 		echo '<p ><label for="' . $this->get_field_name('width') . '">Width:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('width') . '" name="' . $this->get_field_name('width') . '" type="text" value="' . $width . '" /></p>';
 		echo '<p ><label for="' . $this->get_field_name('height') . '">Height:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('height') . '" name="' . $this->get_field_name('height') . '" type="text" value="' . $height . '" /></p>';
 		echo '<hr/>';
@@ -48,13 +55,13 @@ class FbFanBox_Widget_Class extends WP_Widget
 		$fb_lang=(empty($data['lang']) ? 'en_US' : $data['lang']);
 		$widget_title=(empty($instance['title']) ? '' : $instance['title']);
 		$widget_title = apply_filters('widget_title', $widget_title);		
-		$fb_page_link = empty($data['pageURL']) ? '' : $data['pageURL'];
-		$fb_pageID = empty($data['appID']) ? '' : $data['appID'];
+		$fb_page_link = empty($instance['pageurl']) ? '' : $instance['pageurl'];
+		$fb_pageID = empty($instance['appID']) ? '' : $instance['appID'];
 		$width = empty($instance['width']) ? '250' : $instance['width'];
 		$height = empty($instance['height']) ? '260' : $instance['height'];
 		$streams = empty($data['streams']) ? 'yes' : $data['streams'];
 		$fb_colorScheme = empty($data['colorScheme']) ? 'light' : $data['colorScheme'];
-		$borderdisp = empty($data['borderdisp']) ? 'yes' : $data['borderdisp'];
+		$borderdisp = empty($data['borderdisp']) ? 'yes' : $data['borderdisp']; 
 		$showFaces = empty($data['showFaces']) ? 'yes' : $data['showFaces'];
 		$header = empty($data['header']) ? 'yes' : $data['header'];			
 		if ($showFaces == "yes")
@@ -94,6 +101,8 @@ class FbFanBox_Widget_Class extends WP_Widget
 	function update($new_instance, $old_instance){
 		$instance = $old_instance;
 		$instance['title'] = strip_tags(stripslashes($new_instance['title']));
+		$instance['appID'] = strip_tags(stripslashes($new_instance['appID']));
+		$instance['pageurl'] = strip_tags(stripslashes($new_instance['pageurl']));
 		$instance['width'] = strip_tags(stripslashes($new_instance['width']));
 		$instance['height'] = strip_tags(stripslashes($new_instance['height']));
 		return $instance;

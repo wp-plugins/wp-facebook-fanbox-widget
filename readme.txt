@@ -22,10 +22,13 @@ It is a special version of the Like Button designed only for Facebook Pages. It 
     *Easy to install.
     *Very easy to configure.
     *Displays recent activity from your Facebook Page and encourages new Like actions.
-    *Multiple instance so you can use the  widget in multiple places.
+    *Multiple instance so you can use the  widget in multiple places with different appId and facebook pages.
     *Configurable Facebook color scheme(Light/Dark).
     *Lightweight and loads fast.
     *Feature to display Fanbox in a bunch of different languages.
+    *shortcode feature is also available with various parameter.
+    
+
 
 = Rate Us / Feedback =
 
@@ -75,27 +78,27 @@ The XFBML and HTML5 versions of the button allow you to subscribe to the 'edge.c
 
 == Available Languages ==
 
-Afrikaans	     	af_ZA
+Afrikaans	     	af_ZA 
 
-Albanian	     	sq_AL
+Albanian	     	sq_AL 
 
-Arabic	             	ar_AR
+Arabic	             	ar_AR 
 
-Armenian	     	hy_AM
+Armenian	     	hy_AM 
 
-Aymara	             	ay_BO
+Aymara	             	ay_BO 
 
-Azeri	             	az_AZ
+Azeri	             	az_AZ 
 
-Basque	             	eu_ES
+Basque	             	eu_ES 
 
 Belarusian	     	be_BY
 
-Bengali	             	bn_IN
+Bengali	             	bn_IN 
 
-Bosnian	             	bs_BA
+Bosnian	             	bs_BA 
 
-Bulgarian	     	bg_BG
+Bulgarian	     	bg_BG 
 
 Catalan	             	ca_ES
 
@@ -268,9 +271,11 @@ Tatar			tt_RU
 Telugu			te_IN
 
 Thai			th_TH
+
 Traditional Chinese (Hong Kong)	zh_HK
 
 Traditional Chinese (Taiwan)	zh_TW
+
 Turkish			tr_TR
 
 Ukrainian		uk_UA
@@ -296,6 +301,10 @@ Zulu			zu_ZA
 4. Widget displayed in the front end.
 
 == Changelog ==
+= 1.2 =
+* Added the shortcode feature with various parameter which you can use it at any post/page.
+* Added Widget with appId and page url. You can use multiple widget for different appid and facebook pages.
+
 = 1.1 =
 * Added the feature to select from a bunch of different languages
 
