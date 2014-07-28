@@ -21,9 +21,7 @@ function fb_wp_head() {
 		$message = $error = "";
 		$shortcode='';
 		$plugin_info = get_plugin_data( __FILE__ );
-		if ( isset( $_REQUEST['fb_form_submit'] ) && check_admin_referer( plugin_basename( __FILE__ ), 'fb_nonce' ) ) {		
-				$options['appID']=$_REQUEST['appID'];
-				$options['pageURL']=$_REQUEST['pageURL'];
+		if ( isset( $_REQUEST['fb_form_submit'] ) && check_admin_referer( plugin_basename( __FILE__ ), 'fb_nonce' ) ) {
 				$options['streams']	=$_REQUEST['streams'];
 				$options['borderdisp']=$_REQUEST['borderdisp'];
 				$options['colorScheme']=$_REQUEST['colorScheme'];
@@ -49,18 +47,6 @@ function fb_wp_head() {
 			<?php if ( ! isset( $_GET['action'] ) ) { ?>
 				<form name="form1" method="post" action="" enctype="multipart/form-data" id="fcbkbttn_settings_form">
 					<table class="form-table">
-						<tr valign="top">
-							<th scope="row">Your Facebook App ID:</th>
-							<td>
-								<input name='appID' type='text'  value='<?php echo $fb_like_bx_settings['appID']; ?>' />&nbsp; <img border="0"  value="Tip" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" class="tip" title="Specify the Facebook Page ID for displaying in Like Box">
-							</td>
-						</tr>
-						<tr valign="top">
-							<th scope="row">Facebook Page URL:</th>
-							<td>
-								<input name='pageURL' type='text' value='<?php echo $fb_like_bx_settings['pageURL']; ?>' />&nbsp; <img border="0"  value="Tip" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" class="tip" title="The absolute URL of the Facebook Page that will be liked. This is a required setting.">
-							</td>
-						</tr>
 					
 						<tr>
 							<th>
@@ -292,47 +278,25 @@ If You Want more functionality or some modifications, just drop us a line what y
 <br>	
 <?php
 $shortcode='';
-if (isset( $_REQUEST['fb_form_submit'] )) {
-$data=get_option('fb_like_bx_options');
+		
+$shortcode='[facebook_fanbox  href=""  appid=""  language=""  width=""  height=""  colorscheme=""  showfaces=""  header=""  stream=""  showborder="" ]';
 
-		$fb_lang=(empty($data['lang']) ? 'en_US' : $data['lang']);	
-		$fb_page_link = empty($data['pageURL']) ? '' : $data['pageURL'];
-		$fb_pageID = empty($data['appID']) ? '' : $data['appID'];
-		$width = empty($instance['width']) ? '250' : $instance['width'];
-		$height = empty($instance['height']) ? '260' : $instance['height'];
-		$streams = empty($data['streams']) ? 'yes' : $data['streams'];
-		$fb_colorScheme = empty($data['colorScheme']) ? 'light' : $data['colorScheme'];
-		$borderdisp = empty($data['borderdisp']) ? 'yes' : $data['borderdisp'];
-		$showFaces = empty($data['showFaces']) ? 'yes' : $data['showFaces'];
-		$header = empty($data['header']) ? 'yes' : $data['header'];			
-		if ($showFaces == "yes")
-			$showFaces = "true";			
-		else
-			$showFaces = "false";
-		
-		if ($streams == "yes") {
-			$streams = "true";
-			$height = $height + 300;
-		} else
-			$streams = "false";
-		
-		if ($header == "yes") {
-			$header = "true";
-			$height = $height + 32;
-		} else
-			$header = "false";
-		
-		if ($borderdisp == "yes") {
-			$borderdisp = "true";
-		} else
-			$borderdisp = "false";
-			
-$shortcode='[facebook_fanbox  href="'.$fb_page_link.'"  appid="'.$fb_pageID.'"  language="'.$fb_lang.'"  width="'.$width.'"  height="'.$height.'"  colorscheme="'.$fb_colorScheme.'"  showfaces="'.$showFaces.'"  header="'.$header.'"  stream="'.$streams.'"  showborder="'.$borderdisp.'" ]';
-}
 echo $shortcode;
 ?>
 <br><br>
-You can edit these parameter according self in shortcode and use.
+You can edit these parameter according self in shortcode and use.<br><br>
+<p>
+href = Give your valid Facebook Pageurl like www.facebook.com/example. <br>
+appid = Give your valid Facebook AppId. <br>
+language = Give language code. <br>
+width = Give the width. <br>
+height = Give the height. <br>
+colorscheme = Give one of these value : dark,light <br>
+showfaces = Give one of these value : true,false <br>
+header = Give one of these value : true,false <br>
+stream = Give one of these value : true,false <br>
+showborder = Give one of these value : true,false <br> 
+</p>
 			</div>
 			</div>
 	<?php }
