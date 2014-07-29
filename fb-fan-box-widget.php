@@ -33,6 +33,7 @@ class FbFanBox_Widget_Class extends WP_Widget
 				'pageurl'=>'',
 				'height'=>'292',
 				'width'=>'250',
+				
 		) );
 	
 		$widget_title = htmlspecialchars($instance['title']);
@@ -40,12 +41,15 @@ class FbFanBox_Widget_Class extends WP_Widget
 		$pageurl = empty($instance['pageurl']) ? '' : $instance['pageurl'];
 		$width = empty($instance['width']) ? '250' : $instance['width'];
 		$height = empty($instance['height']) ? '260' : $instance['height'];
+		$bordercolor = empty($instance['bordercolor']) ? '' : $instance['bordercolor'];
 		echo '<p ><label for="' . $this->get_field_name('title') . '">Title:</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $widget_title . '" /></p>';
 		echo '<hr/><p style="text-align:left;"><b>Like Box Setting</b></p>';
 		echo '<p ><label for="' . $this->get_field_name('appID') . '">Facebook App ID:</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('appID') . '" name="' . $this->get_field_name('appID') . '" type="text" value="' . $appID . '" /></p>';
 		echo '<p ><label for="' . $this->get_field_name('pageurl') . '">Facebook Page Url:</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('pageurl') . '" name="' . $this->get_field_name('pageurl') . '" type="text" value="' . $pageurl . '" /></p>';
 		echo '<p ><label for="' . $this->get_field_name('width') . '">Width:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('width') . '" name="' . $this->get_field_name('width') . '" type="text" value="' . $width . '" /></p>';
 		echo '<p ><label for="' . $this->get_field_name('height') . '">Height:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('height') . '" name="' . $this->get_field_name('height') . '" type="text" value="' . $height . '" /></p>';
+		echo '<p ><label for="' . $this->get_field_name('bordercolor') . '">Border Color:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('bordercolor') . '" name="' . $this->get_field_name('bordercolor') . '" type="text" value="' . $bordercolor . '" /></p>';		
+		
 		echo '<hr/>';
 	}
 	function widget($args, $instance){
@@ -59,6 +63,7 @@ class FbFanBox_Widget_Class extends WP_Widget
 		$fb_pageID = empty($instance['appID']) ? '' : $instance['appID'];
 		$width = empty($instance['width']) ? '250' : $instance['width'];
 		$height = empty($instance['height']) ? '260' : $instance['height'];
+		$bordercolor = empty($instance['bordercolor']) ? '' : $instance['bordercolor'];
 		$streams = empty($data['streams']) ? 'yes' : $data['streams'];
 		$fb_colorScheme = empty($data['colorScheme']) ? 'light' : $data['colorScheme'];
 		$borderdisp = empty($data['borderdisp']) ? 'yes' : $data['borderdisp']; 
@@ -85,7 +90,11 @@ class FbFanBox_Widget_Class extends WP_Widget
 
 		if ( $widget_title )
 			echo $before_title . $widget_title . $after_title;
-
+	
+		if($bordercolor != '')
+		{$style="border:2px solid ".$bordercolor;} else{
+$style='';				
+			}
 		$isUsingPageURL = false;
 		echo '<div id="fb-root"></div>
 		<script>(function(d, s, id) {
@@ -93,8 +102,8 @@ class FbFanBox_Widget_Class extends WP_Widget
 		if (d.getElementById(id)) return;
 		js = d.createElement(s); js.id = id;
 		js.src = "//connect.facebook.net/'.$fb_lang.'/all.js#xfbml=1&appId='.$fb_pageID.'";fjs.parentNode.insertBefore(js, fjs);}(document, \'script\', \'facebook-jssdk\'));</script>';
-		$like_box_xfbml = "<fb:like-box href=\"$fb_page_link\" width=\"$width\" show_faces=\"$showFaces\" border_color=\"$borderdisp\" stream=\"$streams\" header=\"$header\" data-colorscheme=\"$fb_colorScheme\" data-show-border=\"$borderdisp\"></fb:like-box>";
-		$renderedHTML = $like_box_xfbml;
+		$like_box_xfbml = "<fb:like-box href=\"$fb_page_link\" style=\"$style\"  width=\"$width\" show_faces=\"$showFaces\" border_color=\"$borderdisp\" stream=\"$streams\" header=\"$header\" data-colorscheme=\"$fb_colorScheme\" data-show-border=\"$borderdisp\"></fb:like-box>";
+		$renderedHTML = $like_box_xfbml;	
 		echo $renderedHTML;
 		echo $after_widget;
 	}
@@ -105,6 +114,7 @@ class FbFanBox_Widget_Class extends WP_Widget
 		$instance['pageurl'] = strip_tags(stripslashes($new_instance['pageurl']));
 		$instance['width'] = strip_tags(stripslashes($new_instance['width']));
 		$instance['height'] = strip_tags(stripslashes($new_instance['height']));
+		$instance['bordercolor'] = strip_tags(stripslashes($new_instance['bordercolor']));
 		return $instance;
 	}
 	function __construct(){
