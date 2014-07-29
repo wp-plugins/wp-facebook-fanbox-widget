@@ -155,5 +155,3 @@ add_filter('plugin_row_meta', 'add_meta_links_wpfb',10, 2);
 		}
 		return $links;
 	}
-?>
-
