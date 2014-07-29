@@ -48,7 +48,7 @@ class FbFanBox_Widget_Class extends WP_Widget
 		echo '<p ><label for="' . $this->get_field_name('pageurl') . '">Facebook Page Url:</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('pageurl') . '" name="' . $this->get_field_name('pageurl') . '" type="text" value="' . $pageurl . '" /></p>';
 		echo '<p ><label for="' . $this->get_field_name('width') . '">Width:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('width') . '" name="' . $this->get_field_name('width') . '" type="text" value="' . $width . '" /></p>';
 		echo '<p ><label for="' . $this->get_field_name('height') . '">Height:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('height') . '" name="' . $this->get_field_name('height') . '" type="text" value="' . $height . '" /></p>';
-		echo '<p ><label for="' . $this->get_field_name('bordercolor') . '">Border Color:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('bordercolor') . '" name="' . $this->get_field_name('bordercolor') . '" type="text" value="' . $bordercolor . '" /></p>';		
+		echo '<p ><label for="' . $this->get_field_name('bordercolor') . '">Border Color:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('bordercolor') . '" name="' . $this->get_field_name('bordercolor') . '" type="color" value="' . $bordercolor . '" /></p>';		
 		
 		echo '<hr/>';
 	}
@@ -156,3 +156,4 @@ add_filter('plugin_row_meta', 'add_meta_links_wpfb',10, 2);
 		return $links;
 	}
 ?>
+
