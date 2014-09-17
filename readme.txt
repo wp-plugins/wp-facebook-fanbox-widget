@@ -4,7 +4,7 @@ Donate link: http://bit.ly/1icl56K
 Tags:  wp fanbox,fanbox,facebook fanbox,wp facebook fanbox,wp facebook fanbox widget,facebook likebox, facebook page timeline,facebook likebox widget,facebook likebox widget for wordpress,wp facebook likebox widget,likebox, facebook
 Requires at least: 3.0
 Tested up to: 3.9.1
-Stable Tag: 1.2
+Stable Tag: 1.3
 License: GPLv2 or later
 
 WP FaceBook FanBox - A social plugin that allows users to promote their Pages and embed a page feed on the websites in their own Locale(Language). 
@@ -27,6 +27,8 @@ It is a special version of the Like Button designed only for Facebook Pages. It 
     *Lightweight and loads fast.
     *Feature to display Fanbox in a bunch of different languages.
     *shortcode feature is also available with various parameter.
+    *Pot file added for multi language support.
+    *Plugin translated into Serbian (sr_RS).
     
 
 
@@ -301,6 +303,11 @@ Zulu			zu_ZA
 4. Widget displayed in the front end.
 
 == Changelog ==
+
+= 1.3 =
+* Pot file added for multi language support on backend.
+* Plugin translated into Serbian (sr_RS).
+
 = 1.2 =
 * Added the shortcode feature with various parameter which you can use it at any post/page.
 * Added Widget with appId and page url. You can use multiple widget for different appid and facebook pages.
