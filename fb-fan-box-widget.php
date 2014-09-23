@@ -1,14 +1,11 @@
 <?php
 /*
  * Plugin Name: Facebook Fan Box Widget
- * Version: 1.3
+ * Version: 1.2
  * Plugin URI: http://www.vivacityinfotech.net/
  * Description: A Facebook social plugin that allows page owners to promote their Pages and embed a page feed on their websites through a simple to use widget.
- * Author: Vivacityinfotech
+ * Author: vivacityinfotech
  * Author URI: http://www.vivacityinfotech.net/
- * Text Domain: wp-facebook-fanbox-widget
- * Domain Path: /languages/
- 
  
  Copyright 2014  Vivacity InfoTech Pvt. Ltd.  (email : support@vivacityinfotech.com)
 
@@ -25,13 +22,6 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
- 
-  add_action('init', 'load_vivafbfanbox_trans');
-    function load_vivafbfanbox_trans()
-   {
-       load_plugin_textdomain('wp-facebook-fanbox-widget', FALSE, dirname(plugin_basename(__FILE__)).'/languages/');
-   }
-
 require_once('facebook-fanbox-settings.php');
 class FbFanBox_Widget_Class extends WP_Widget
 {
@@ -52,22 +42,22 @@ class FbFanBox_Widget_Class extends WP_Widget
 		$width = empty($instance['width']) ? '250' : $instance['width'];
 		$height = empty($instance['height']) ? '260' : $instance['height'];
 		$bordercolor = empty($instance['bordercolor']) ? '' : $instance['bordercolor'];
-		echo '<p ><label for="' . $this->get_field_name('title') . '">'. __( "Title", "wp-facebook-fanbox-widget" ).':</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $widget_title . '" /></p>';
-		echo '<hr/><p style="text-align:left;"><b>'. __( "Like Box Setting", "wp-facebook-fanbox-widget" ).'</b></p>';
-		echo '<p ><label for="' . $this->get_field_name('appID') . '">'. __( "Facebook App ID", "wp-facebook-fanbox-widget" ).':</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('appID') . '" name="' . $this->get_field_name('appID') . '" type="text" value="' . $appID . '" /></p>';
-		echo '<p ><label for="' . $this->get_field_name('pageurl') . '">'. __( "Facebook Page Url", "wp-facebook-fanbox-widget" ).':</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('pageurl') . '" name="' . $this->get_field_name('pageurl') . '" type="text" value="' . $pageurl . '" /></p>';
-		echo '<p ><label for="' . $this->get_field_name('width') . '">'. __( "Width", "wp-facebook-fanbox-widget" ).':</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('width') . '" name="' . $this->get_field_name('width') . '" type="text" value="' . $width . '" /></p>';
-		echo '<p ><label for="' . $this->get_field_name('height') . '">'. __( "Height", "wp-facebook-fanbox-widget" ).':</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('height') . '" name="' . $this->get_field_name('height') . '" type="text" value="' . $height . '" /></p>';
-		echo '<p ><label for="' . $this->get_field_name('bordercolor') . '">'. __( "Border Color", "wp-facebook-fanbox-widget" ).':</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('bordercolor') . '" name="' . $this->get_field_name('bordercolor') . '" type="color" value="' . $bordercolor . '" /></p>';		
+		echo '<p ><label for="' . $this->get_field_name('title') . '">Title:</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('title') . '" name="' . $this->get_field_name('title') . '" type="text" value="' . $widget_title . '" /></p>';
+		echo '<hr/><p style="text-align:left;"><b>Like Box Setting</b></p>';
+		echo '<p ><label for="' . $this->get_field_name('appID') . '">Facebook App ID:</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('appID') . '" name="' . $this->get_field_name('appID') . '" type="text" value="' . $appID . '" /></p>';
+		echo '<p ><label for="' . $this->get_field_name('pageurl') . '">Facebook Page Url:</label><br/> <input style="width: 250px;" id="' . $this->get_field_id('pageurl') . '" name="' . $this->get_field_name('pageurl') . '" type="text" value="' . $pageurl . '" /></p>';
+		echo '<p ><label for="' . $this->get_field_name('width') . '">Width:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('width') . '" name="' . $this->get_field_name('width') . '" type="text" value="' . $width . '" /></p>';
+		echo '<p ><label for="' . $this->get_field_name('height') . '">Height:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('height') . '" name="' . $this->get_field_name('height') . '" type="text" value="' . $height . '" /></p>';
+		echo '<p ><label for="' . $this->get_field_name('bordercolor') . '">Border Color:</label><br/> <input style="width: 100px;" id="' . $this->get_field_id('bordercolor') . '" name="' . $this->get_field_name('bordercolor') . '" type="color" value="' . $bordercolor . '" /></p>';		
 		
 		echo '<hr/>';
 	}
 	function widget($args, $instance){
 		extract($args);
-		$data = get_option('fb_like_bx_options');
+		$data=get_option('fb_like_bx_options');
 
-		$fb_lang = (empty($data['lang']) ? 'en_US' : $data['lang']);
-		$widget_title = (empty($instance['title']) ? '' : $instance['title']);
+		$fb_lang=(empty($data['lang']) ? 'en_US' : $data['lang']);
+		$widget_title=(empty($instance['title']) ? '' : $instance['title']);
 		$widget_title = apply_filters('widget_title', $widget_title);		
 		$fb_page_link = empty($instance['pageurl']) ? '' : $instance['pageurl'];
 		$fb_pageID = empty($instance['appID']) ? '' : $instance['appID'];
@@ -128,13 +118,13 @@ $style='';
 		return $instance;
 	}
 	function __construct(){
-		$options_widget = array('classname' => 'widget_FacebookLikeBox', 'description' => __( 'WP Facebook Fan Box Widget is a social plugin that allows page owners to promote their Pages and embed a page feed on their websites.', 'wp-facebook-fanbox-widget' ));
+		$options_widget = array('classname' => 'widget_FacebookLikeBox', 'description' =>"WP Facebook Fan Box Widget is a social plugin that allows page owners to promote their Pages and embed a page feed on their websites.");
 		$options_control = array('width' => 300, 'height' => 300);
-		$this->WP_Widget('FbFanBox_Widget_Class', __( "WP Facebook Fan Box", "wp-facebook-fanbox-widget" ), $options_widget, $options_control);
+		$this->WP_Widget('FbFanBox_Widget_Class', 'WP Facebook Fan Box', $options_widget, $options_control);
 	}
 }
 function fb_fan_settings_link( $links ) {
-	$settings_page = '<a href="' . admin_url('admin.php?page=fb_box_settings' ) .'">'. __( "Settings", "wp-facebook-fanbox-widget" ).'</a>';
+	$settings_page = '<a href="' . admin_url('admin.php?page=fb_box_settings' ) .'">Settings</a>';
 	array_unshift( $links, $settings_page );
 	return $links;
 }
@@ -160,8 +150,8 @@ add_filter( "plugin_action_links_$plugin", 'fb_fan_settings_link' );
 add_filter('plugin_row_meta', 'add_meta_links_wpfb',10, 2);
 	function add_meta_links_wpfb($links, $file) {
 		if ( strpos( $file, 'fb-fan-box-widget.php' ) !== false ) {
-			$links[] = '<a href="http://wordpress.org/support/plugin/wp-facebook-fanbox-widget">'. __( "Support", "wp-facebook-fanbox-widget").'</a>';
-			$links[] = '<a href="http://bit.ly/1icl56K">'. __( "Donate", "wp-facebook-fanbox-widget").'</a>';
+			$links[] = '<a href="http://wordpress.org/support/plugin/wp-facebook-fanbox-widget">Support</a>';
+			$links[] = '<a href="http://bit.ly/1icl56K">Donate</a>';
 		}
 		return $links;
 	}

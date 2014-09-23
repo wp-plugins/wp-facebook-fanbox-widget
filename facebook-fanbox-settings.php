@@ -38,10 +38,10 @@ function fb_wp_head() {
 			
 			<div class="postbox settings_wrap left">
 			
-			<h3 class="hndle" style="padding:10px;"><?php _e( "Facebook Like Box Settings", "wp-facebook-fanbox-widget" ); ?></h3>
+			<h3 class="hndle" style="padding:10px;">Facebook Like Box Settings</h3>
 			<div class="inside">
 			<div class="updated fade" <?php if ( empty( $message ) || "" != $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
-			<div id="fb_admin_notice" class="updated fade" style="display:none"><p><strong><?php _e( "Notice", "wp-facebook-fanbox-widget" ); ?>:</strong> <?php _e( "Plugin's settings have been changed. To save them please click the 'Save Changes' button before navigating away the page.", "wp-facebook-fanbox-widget" ); ?></p></div>
+			<div id="fb_admin_notice" class="updated fade" style="display:none"><p><strong>Notice:</strong> Plugin's settings have been changed. To save them please click the 'Save Changes' button before navigating away the page.</p></div>
 			<div class="error" <?php if ( "" == $error ) echo "style=\"display:none\""; ?>><p><strong><?php echo $error; ?></strong></p></div>
 			
 			<?php if ( ! isset( $_GET['action'] ) ) { ?>
@@ -50,74 +50,75 @@ function fb_wp_head() {
 					
 						<tr>
 							<th>
-								<?php _e( "Show Posts", "wp-facebook-fanbox-widget" ); ?>:
+								Show Posts:
 							</th>
 							<td>
 							<div class="cmb_radio_inline"><div class="cmb_radio_inline_option">
-							<input type="radio" name="streams" id="streams1" value="yes" <?php if(isset($fb_like_bx_settings['streams']) && $fb_like_bx_settings['streams']=="yes"){echo 'checked="checked"';}?>><label for="streams1"><?php _e( "Yes", "wp-facebook-fanbox-widget" ); ?></label></div>
-							<div class="cmb_radio_inline_option"><input type="radio" name="streams" id="streams2" value="no" <?php if(isset($fb_like_bx_settings['streams']) && $fb_like_bx_settings['streams']=="no"){echo 'checked';}?>><label for="streams2"><?php _e( "No", "wp-facebook-fanbox-widget" ); ?></label></div>
+							<input type="radio" name="streams" id="streams1" value="yes" <?php if(isset($fb_like_bx_settings['streams']) && $fb_like_bx_settings['streams']=="yes"){echo 'checked="checked"';}?>><label for="streams1">Yes</label></div>
+							<div class="cmb_radio_inline_option"><input type="radio" name="streams" id="streams2" value="no" <?php if(isset($fb_like_bx_settings['streams']) && $fb_like_bx_settings['streams']=="no"){echo 'checked';}?>><label for="streams2">No</label></div>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<img border="0"  class="tip" value="Tipisset( $_REQUEST['fb_form_submit'] )" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="<?php _e( 'Specifies whether to display a stream of the latest posts by the Page.', 'wp-facebook-fanbox-widget'); ?>">
+								<img border="0"  class="tip" value="Tipisset( $_REQUEST['fb_form_submit'] )" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="Specifies whether to display a stream of the latest posts by the Page.">
 							</div>
 							</td>
 						</tr>
 						<tr>
 						<tr>
 							<th>
-								<?php _e( "Colour Scheme", "wp-facebook-fanbox-widget" ); ?>:
+								Colour Scheme:
 							</th>
 							<td>
 							<div class="cmb_radio_inline"><div class="cmb_radio_inline_option">
-							<input type="radio" name="colorScheme" id="colorScheme1" value="light" <?php if(isset($fb_like_bx_settings['colorScheme']) && $fb_like_bx_settings['colorScheme']=="light"){echo 'checked';}?>><label for="colorScheme1"><?php _e( "Light", "wp-facebook-fanbox-widget" ); ?></label></div>
-							<div class="cmb_radio_inline_option"><input type="radio" name="colorScheme" id="colorScheme2" value="dark" <?php if(isset($fb_like_bx_settings['colorScheme']) && $fb_like_bx_settings['colorScheme']=="dark"){echo 'checked';}?>><label for="colorScheme2"><?php _e( "Dark", "wp-facebook-fanbox-widget" ); ?></label></div>
+							<input type="radio" name="colorScheme" id="colorScheme1" value="light" <?php if(isset($fb_like_bx_settings['colorScheme']) && $fb_like_bx_settings['colorScheme']=="light"){echo 'checked';}?>><label for="colorScheme1">Light</label></div>
+							<div class="cmb_radio_inline_option"><input type="radio" name="colorScheme" id="colorScheme2" value="dark" <?php if(isset($fb_like_bx_settings['colorScheme']) && $fb_like_bx_settings['colorScheme']=="dark"){echo 'checked';}?>><label for="colorScheme2">Dark</label></div>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<img border="0"  class="tip" value="Tip" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="<?php _e( 'The color scheme used by the plugin. Can be light or dark.', 'wp-facebook-fanbox-widget' ); ?>">
+								<img border="0"  class="tip" value="Tip" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="The color scheme used by the plugin. Can be 'light' or 'dark'.">
 							</div>
 							</td>
 						</tr>
 						<tr>
 							<th>
-								<?php _e( "Show Border", "wp-facebook-fanbox-widget" ); ?>:
+								Show Border:
 							</th>
 							<td>
 							<div class="cmb_radio_inline"><div class="cmb_radio_inline_option">
-							<input type="radio" name="borderdisp" id="borderdisp1" value="yes" <?php if(isset($fb_like_bx_settings['borderdisp']) && $fb_like_bx_settings['borderdisp']=="yes"){echo 'checked';}?>><label for="borderdisp1"><?php _e( "Yes", "wp-facebook-fanbox-widget" ); ?></label></div>
-							<div class="cmb_radio_inline_option"><input type="radio" name="borderdisp" id="borderdisp2" value="no" <?php if(isset($fb_like_bx_settings['borderdisp']) && $fb_like_bx_settings['borderdisp']=="no"){echo 'checked';}?>><label for="borderdisp2"><?php _e( "No", "wp-facebook-fanbox-widget" ); ?></label></div>
+							<input type="radio" name="borderdisp" id="borderdisp1" value="yes" <?php if(isset($fb_like_bx_settings['borderdisp']) && $fb_like_bx_settings['borderdisp']=="yes"){echo 'checked';}?>><label for="borderdisp1">Yes</label></div>
+							<div class="cmb_radio_inline_option"><input type="radio" name="borderdisp" id="borderdisp2" value="no" <?php if(isset($fb_like_bx_settings['borderdisp']) && $fb_like_bx_settings['borderdisp']=="no"){echo 'checked';}?>><label for="borderdisp2">No</label></div>
 								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<img border="0"  class="tip" value="Tip" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="<?php _e( 'Specifies whether or not to show a border around the plugin.', 'wp-facebook-fanbox-widget'); ?>">
-							</div>
-							</td>
-						</tr>
-						<tr>
-							<th>
-								<?php _e( "Show Friends Faces", "wp-facebook-fanbox-widget" ); ?> :
-							</th>
-							<td>
-							<div class="cmb_radio_inline"><div class="cmb_radio_inline_option">
-							<input type="radio" name="showFaces" id="showFaces1" value="yes" <?php if(isset($fb_like_bx_settings['showFaces']) && $fb_like_bx_settings['showFaces']=="yes"){echo 'checked';}?>><label for="showFaces1"><?php _e( "Yes", "wp-facebook-fanbox-widget" ); ?></label></div>
-							<div class="cmb_radio_inline_option"><input type="radio" name="showFaces" id="showFaces2" value="no"  <?php if(isset($fb_like_bx_settings['showFaces']) && $fb_like_bx_settings['showFaces']=="no"){echo 'checked';}?>><label for="showFaces2"><?php _e( "No", "wp-facebook-fanbox-widget" ); ?></label></div>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<img border="0"  value="Tip" class="tip" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="<?php _e( 'Specifies whether to display profile photos of people who like the page.', 'wp-facebook-fanbox-widget'); ?>">
-							</div>
-							</td>
-						</tr>
-						<tr>
-							<th>
-								<?php _e( "Show Header", "wp-facebook-fanbox-widget" ); ?>:
-							</th>
-							<td>
-							<div class="cmb_radio_inline"><div class="cmb_radio_inline_option">
-							<input type="radio" name="header" id="header1" value="yes" <?php if(isset($fb_like_bx_settings['header']) && $fb_like_bx_settings['header']=="yes"){echo 'checked';}?>><label for="header1"><?php _e( "Yes", "wp-facebook-fanbox-widget" ); ?></label></div>
-							<div class="cmb_radio_inline_option"><input type="radio" name="header" id="header2" value="no" <?php if(isset($fb_like_bx_settings['header']) && $fb_like_bx_settings['header']=="no"){echo 'checked';}?>><label for="header2"><?php _e( "No", "wp-facebook-fanbox-widget" ); ?></label></div>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-								<img border="0"  value="Tip" class="tip" title="Specifies whether to display the Facebook header at the top of the plugin." src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="<?php _e( 'Show the Find Us on Facebook header on the plugin', 'wp-facebook-fanbox-widget'); ?>">
+								<img border="0"  class="tip" value="Tip" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="Specifies whether or not to show a border around the plugin.">
 							</div>
 							</td>
 						</tr>
 						
 						<tr>
 							<th>
-								<?php _e( "Select Your Language", "wp-facebook-fanbox-widget" ); ?>:
+								Show Friends' Faces :
+							</th>
+							<td>
+							<div class="cmb_radio_inline"><div class="cmb_radio_inline_option">
+							<input type="radio" name="showFaces" id="showFaces1" value="yes" <?php if(isset($fb_like_bx_settings['showFaces']) && $fb_like_bx_settings['showFaces']=="yes"){echo 'checked';}?>><label for="showFaces1">Yes</label></div>
+							<div class="cmb_radio_inline_option"><input type="radio" name="showFaces" id="showFaces2" value="no"  <?php if(isset($fb_like_bx_settings['showFaces']) && $fb_like_bx_settings['showFaces']=="no"){echo 'checked';}?>><label for="showFaces2">No</label></div>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<img border="0"  value="Tip" class="tip" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="Specifies whether to display profile photos of people who like the page.">
+							</div>
+							</td>
+						</tr>
+						<tr>
+							<th>
+								Show Header:
+							</th>
+							<td>
+							<div class="cmb_radio_inline"><div class="cmb_radio_inline_option">
+							<input type="radio" name="header" id="header1" value="yes" <?php if(isset($fb_like_bx_settings['header']) && $fb_like_bx_settings['header']=="yes"){echo 'checked';}?>><label for="header1">Yes</label></div>
+							<div class="cmb_radio_inline_option"><input type="radio" name="header" id="header2" value="no" <?php if(isset($fb_like_bx_settings['header']) && $fb_like_bx_settings['header']=="no"){echo 'checked';}?>><label for="header2">No</label></div>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<img border="0"  value="Tip" class="tip" title="Specifies whether to display the Facebook header at the top of the plugin." src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="Show the 'Find Us on Facebook' header on the plugin">
+							</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<th>
+								Select Your Language:
 							</th>
 							<td>
 							<div class="cmb_radio_inline"><div class="cmb_radio_inline_option">
@@ -240,8 +241,7 @@ function fb_wp_head() {
 								
 							}
 								?>
-							</select><img border="0"  value="Tip" class="tip" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="<?php _e( 'Select the language for Facebook Fanbox', 'wp-facebook-fanbox-widget' ); ?> ">
-						
+							</select><img border="0"  value="Tip" class="tip" title="Select the language for Facebook Fanbox" src="<?php echo plugins_url( 'images/help.png', __FILE__ )?>" title="Show the 'Find Us on Facebook' header on the plugin">
 							</div>
 							</td>
 						</tr>
@@ -249,7 +249,7 @@ function fb_wp_head() {
 						<tr>
 							<td colspan="2">
 								<input type="hidden" name="fb_form_submit" value="submit" />
-								<input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'wp-facebook-fanbox-widget' ); ?>" />
+								<input type="submit" class="button-primary" value="Save Changes" />
 							</td>
 						</tr>
 					</table>
@@ -259,22 +259,22 @@ function fb_wp_head() {
 				</div>
 				</div>
 				<div class="postbox right ads_bar">
-			<h3 class="hndle" style="padding:10px;"><span><?php _e( "Follow Us", "wp-facebook-fanbox-widget" ); ?></span></h3>
+			<h3 class="hndle" style="padding:10px;"><span>Follow Us</span></h3>
 			<div class="inside">
-			<?php _e( "Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.", "wp-facebook-fanbox-widget" ); ?>
+			Please take the time to let us and others know about your experiences by leaving a review, so that we can improve the plugin for you and other users.
 <br/>
-<h4><?php _e( "Want More?", "wp-facebook-fanbox-widget" ); ?></h4>
-<?php _e( "If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.", "wp-facebook-fanbox-widget" ); ?>
+<h4>Want More?</h4>
+If You Want more functionality or some modifications, just drop us a line what you want and We will try to add or modify the plugin functions.
 			
 			</div>
 			</div>
 		</div>
 		<div class="clear"></div>
 		<div class="postbox">
-			<h3 class="hndle" style="padding:10px;"><span><?php _e( "ShortCode", "wp-facebook-fanbox-widget" ); ?></span></h3>
+			<h3 class="hndle" style="padding:10px;"><span>ShortCode</span></h3>
 			<div class="inside">
-			<?php _e( "You can use this shortcode in your code, where you want to display this Facebook Fanbox.", "wp-facebook-fanbox-widget" ); ?>
-<br>	
+			You can use this shortcode in your code, where you want to display this Facebook Fanbox.
+<br/>	
 <br>	
 <?php
 $shortcode='';
@@ -284,18 +284,18 @@ $shortcode='[facebook_fanbox  href=""  appid=""  language=""  width=""  height="
 echo $shortcode;
 ?>
 <br><br>
-<?php _e( "You can edit these parameter according self in shortcode and use.", "wp-facebook-fanbox-widget" ); ?><br><br>
+You can edit these parameter according self in shortcode and use.<br><br>
 <p>
-href = <?php _e( "Give your valid Facebook Pageurl like", "wp-facebook-fanbox-widget" ); ?> www.facebook.com/example. <br>
-appid = <?php _e( "Give your valid Facebook AppId.", "wp-facebook-fanbox-widget" ); ?> <br>
-language = <?php _e( "Give language code.", "wp-facebook-fanbox-widget" ); ?> <br>
-width = <?php _e( "Give the width.", "wp-facebook-fanbox-widget" ); ?> <br>
-height = <?php _e( "Give the height.", "wp-facebook-fanbox-widget" ); ?> <br>
-colorscheme = <?php _e( "Give one of these value", "wp-facebook-fanbox-widget" ); ?> : dark,light <br>
-showfaces = <?php _e( "Give one of these value", "wp-facebook-fanbox-widget" ); ?> : true,false <br>
-header = <?php _e( "Give one of these value", "wp-facebook-fanbox-widget" ); ?> : true,false <br>
-stream = <?php _e( "Give one of these value", "wp-facebook-fanbox-widget" ); ?> : true,false <br>
-showborder = <?php _e( "Give one of these value", "wp-facebook-fanbox-widget" ); ?> : true,false <br> 
+href = Give your valid Facebook Pageurl like www.facebook.com/example. <br>
+appid = Give your valid Facebook AppId. <br>
+language = Give language code. <br>
+width = Give the width. <br>
+height = Give the height. <br>
+colorscheme = Give one of these value : dark,light <br>
+showfaces = Give one of these value : true,false <br>
+header = Give one of these value : true,false <br>
+stream = Give one of these value : true,false <br>
+showborder = Give one of these value : true,false <br> 
 </p>
 			</div>
 			</div>
@@ -304,8 +304,8 @@ showborder = <?php _e( "Give one of these value", "wp-facebook-fanbox-widget" );
 		update_option( 'fb_like_bx_options', $data );
 	}
 	function fb_admin_init_menu() {
-		add_menu_page( __( "VIVA Plugins", "wp-facebook-fanbox-widget" ), __( "VIVA Plugins", "wp-facebook-fanbox-widget" ), 'manage_options', 'viva_plugins', 'fb_like_bx_settings_page', '', 1001 );
-		add_submenu_page( 'viva_plugins',__( "Facebook FanBox Settings", "wp-facebook-fanbox-widget" ),__( "Facebook FanBox", "wp-facebook-fanbox-widget" ), 'manage_options', "fb_box_settings", 'fb_like_bx_settings_page' );
+		add_menu_page( 'VIVA Plugins', 'VIVA Plugins', 'manage_options', 'viva_plugins', 'fb_like_bx_settings_page', '', 1001 );
+		add_submenu_page( 'viva_plugins','Facebook FanBox Settings','Facebook FanBox', 'manage_options', "fb_box_settings", 'fb_like_bx_settings_page' );
 	}
 	
 	
