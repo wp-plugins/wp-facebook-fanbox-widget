@@ -3,7 +3,7 @@ Contributors: vivacityinfotech.jaipur
 Donate link: http://bit.ly/1icl56K
 Tags:  wp fanbox,fanbox,facebook fanbox,wp facebook fanbox,wp facebook fanbox widget,facebook likebox, facebook page timeline,facebook likebox widget,facebook likebox widget for wordpress,wp facebook likebox widget,likebox, facebook
 Requires at least: 3.0
-Tested up to: 4.0
+Tested up to: 4.2
 Stable Tag: 1.2
 License: GPLv2 or later
 
