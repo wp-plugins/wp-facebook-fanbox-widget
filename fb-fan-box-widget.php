@@ -6,6 +6,7 @@
  * Description: A Facebook social plugin that allows page owners to promote their Pages and embed a page feed on their websites through a simple to use widget.
  * Author: vivacityinfotech
  * Author URI: http://www.vivacityinfotech.net/
+ * Author Email: support@vivacityinfotech.net
  
  Copyright 2014  Vivacity InfoTech Pvt. Ltd.  (email : support@vivacityinfotech.com)
 
